@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntecxhub - Premium To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-sphere sphere-1"></div>
+    <div class="bg-sphere sphere-2"></div>
+    <div class="bg-sphere sphere-3"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-icon">✨</div>
+                <div class="logo-text">Syntecxhub To-Do List App</div>
+                <div class="tagline">CREATE | THINK | SOLVE</div>
+            </div>
+        </div>
+
+        <div class="content scrollbar">
+            <!-- Input Section -->
+            <div class="input-section">
+                <label class="input-label">📝 Add New Task</label>
+                <div class="input-wrapper">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="taskInput" 
+                            placeholder="What needs to be done today?"
+                            autocomplete="off"
+                        >
+                    </div>
+                    <select id="prioritySelect" class="priority-select">
+                        <option value="low">🟢 Low</option>
+                        <option value="medium" selected>🟡 Medium</option>
+                        <option value="high">🔴 High</option>
+                    </select>
+                    <button class="btn-add" onclick="addTask()">
+                        <span>➕</span> Add
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value" id="totalTasks">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value" id="completedTasks">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-value" id="pendingTasks">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterTasks('all')">📋 All</button>
+                <button class="tab-btn" onclick="filterTasks('pending')">⏳ Pending</button>
+                <button class="tab-btn" onclick="filterTasks('completed')">✅ Done</button>
+                <button class="tab-btn" onclick="filterTasks('high')">🔴 Urgent</button>
+            </div>
+
+            <!-- Tasks List -->
+            <div class="tasks-list scrollbar" id="tasksList">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🎯</div>
+                    <div class="empty-state-text">No tasks yet!</div>
+                    <div class="empty-state-subtext">Start by adding your first task above</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 Syntecxhub Internship Program | Week 2 Challenge
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
